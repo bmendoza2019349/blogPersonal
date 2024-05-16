@@ -53,10 +53,19 @@ export const AddComentario = () => {
 
     const handleAddComentario = (event) => {
         event.preventDefault();
-        console.log(id, formState.texto.value)
         comments(id, formState.texto.value);
         
     }
+
+    const handleUpdateComentario = async (commentId) => {
+        try {
+            await updateComentario(id, commentId, formState.texto.value);
+            navigate(`/public/${id}`);
+        } catch (error) {
+            console.error('Error al actualizar comentario:', error);
+            toast.error('Ocurrió un error al actualizar el comentario, intenta de nuevo');
+        }
+    };
 
     const isSubmitButtonDisabled =
     isLoading || !formState.texto.isValid

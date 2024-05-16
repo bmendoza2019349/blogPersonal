@@ -86,9 +86,61 @@
     background-color: #588d83;
 }
 
+.comentario-buttons-container {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.comentario-buttons-container button {
+    background-color: #031926; /* Color de fondo para los botones */
+    color: #ffffff; /* Color del texto */
+    padding: 8px 16px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones */
+}
+
+.comentario-buttons-container button:hover {
+    background-color: #02212d; /* Cambio de color de fondo en hover */
+}
+
 .public-container-img {
     display: flex;
     justify-content: center;
+}
+
+.boton-eliminar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    padding: 24px;
+    background-color: #77ACA2;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 2;
+    height: 70vh;
+    font-size: 23px;
+}
+
+.boton-eliminar button {
+    width: 100%; /* Hacer que el botón ocupe todo el ancho disponible */
+    padding: 15px; /* Aumentar el relleno para hacerlo más grande */
+    font-size: 20px; /* Aumentar el tamaño del texto */
+    background-color: #468189; /* Color de fondo para el botón */
+    color: #ffffff; /* Color del texto */
+    border: none; /* Eliminar el borde */
+    border-radius: 8px; /* Redondear los bordes */
+    cursor: pointer; /* Cambiar el cursor */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones */
+}
+
+.boton-eliminar button:hover {
+    background-color: #355c56; /* Cambio de color de fondo en hover */
 }
 
 .dashboard-container {

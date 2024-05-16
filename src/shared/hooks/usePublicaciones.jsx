@@ -7,6 +7,7 @@ export const usePublicaciones = () => {
 
     const getPublicaciones = async (isLogged = false) => {
         const publicacionesData = await getPublicacionRequest()
+        
         if(publicacionesData.error){
             return toast.error(
                 publicacionesData.e?.response?.data || 'Ocurrió un error al leer las publicaciones'

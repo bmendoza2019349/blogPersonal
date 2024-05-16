@@ -1,3 +1,6 @@
+import { useAddComentario } from './useAddComentario'
+import { usePublicaciones } from './usePublicaciones'
+
 export { usePublicacionDetails } from './usePublicacionesDetails'
 export { useAddPublicacion } from './useAddPublicaciones'
 export { useLogin } from './useLogin'
