@@ -1,4 +1,5 @@
-import { useAddPublicacion } from './useAddPublicaciones'
+export { usePublicacionDetails } from './usePublicacionesDetails'
+export { useAddPublicacion } from './useAddPublicaciones'
 export { useLogin } from './useLogin'
 export { useRegister} from './useRegister'
 export { logout } from './useLogout'

@@ -16,11 +16,11 @@ export const useUserDetails = () => {
     logoutHandler();
     setUserDetails(null);
   };
-
+  console.log(userDetails?.role)
   return {
     isLogged: Boolean(userDetails),
-    username: userDetails?.username || "Guest",
-    isAdmin:userDetails?.role === "ADMINISTRADOR",
+    username: userDetails?.username ? userDetails.username : "Guest",
+    role: userDetails?.role,
     logout,
   };
 };

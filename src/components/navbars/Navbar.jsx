@@ -11,7 +11,7 @@ const NavButton = ({ text, onClickHandler }) => {
 };
 
 export const Navbar = () => {
-  const { isLogged, logout, isAdmin } = useUserDetails();
+  const { isLogged, logout, role } = useUserDetails();
 
   const navigate = useNavigate()
 
@@ -37,7 +37,6 @@ export const Navbar = () => {
 
   return (
     <div className="nav-container">
-
       <div className="nav-buttons-container">
         <NavButton text="Publicaciones" onClickHandler={handleNavigateToPublicacionesPage} />
 
@@ -45,8 +44,9 @@ export const Navbar = () => {
           <NavButton text="Login" onClickHandler={handleNavigateToAuthPage} />
         ) : (
           <div>
-            <NavButton text="Agregar Publicacion" onClickHandler={handleNavigateToAddPublicacionPage} />
-
+            {role !== 'USER'? (
+              <NavButton text="Agregar Publicacion" onClickHandler={handleNavigateToAddPublicacionPage} />
+            ):(<NavButton />)}
             <NavButton text="My Account" onClickHandler={handleNavigateToSettingsPage} />
             <NavButton text="Logout" onClickHandler={handleLogout} />
           </div>

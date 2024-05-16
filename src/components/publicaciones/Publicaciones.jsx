@@ -16,7 +16,7 @@ export const Publicaciones = ({ publicaciones }) => {
                     key={p._id}
                     id={p._id}
                     titulo={p.titulo}
-                    descripcion={p.descripcion}
+                    materia={p.materia}
                     autor={p.autor}
                     navigateToPublicacionHandler={handleNavigateToPublicacion}
                 />

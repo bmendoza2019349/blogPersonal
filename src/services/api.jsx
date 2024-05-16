@@ -65,6 +65,17 @@ export const addpublicacion = async (data) => {
     }
 }
 
+export const addComentario = async ({id}, data) => {
+    try{
+        return await apiClient.post(`/public/${id}/comments`, data)
+    }catch(e){
+        return{
+            error: true,
+            e
+        }
+    }
+}
+
 export const updatePublicacion = async (data) => {
     try{
         return await apiClient.put('/public', data)
@@ -97,9 +108,9 @@ export const getPublicacion = async () => {
     }
 }
 
-export const addComentario = async (data) => {
+export const getPublicDetails = async (id) => {
     try{
-        return await apiClient.post('/public/comments', data)
+        return await apiClient.get(`/public/${id}`)
     }catch(e){
         return{
             error: true,
@@ -107,6 +118,7 @@ export const addComentario = async (data) => {
         }
     }
 }
+
 export const deleteComentario = async (data) => {
     try{
         return await apiClient.post(`/public/pub/${id}/comdelete/${commentId}`, data)
@@ -128,9 +140,9 @@ export const updateComentario = async (data) => {
     }
 }
 
-export const getComentario = async (data) => {
+export const getComentario = async (id) => {
     try{
-        return await apiClient.post(`/public/commentspublic/${id}`, data)
+        return await apiClient.post(`/public/${id}`)
     }catch(e){
         return{
             error: true,
@@ -139,13 +151,3 @@ export const getComentario = async (data) => {
     }
 }
 
-export const getPublicDetails = async (id) => {
-    try{
-        return await apiClient.get(`/public/${id}`, data)
-    }catch(e){
-        return{
-            error: true,
-            e
-        }
-    }
-}

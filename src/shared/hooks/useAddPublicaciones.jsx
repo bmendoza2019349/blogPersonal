@@ -7,12 +7,14 @@ export const useAddPublicacion = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
-    const addpublicacion = async (titulo, descripcion) => {
+    const addpublicacion = async (img, titulo, descripcion, materia) => {
         setIsLoading(true)
         try {
             const response = await addpublicacionRequest({
+                img,
                 titulo,
-                descripcion
+                descripcion,
+                materia
             });
             console.log(response)
             setIsLoading(false)
